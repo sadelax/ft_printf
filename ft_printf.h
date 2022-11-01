@@ -13,11 +13,10 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "Libft/libft.h"	// ft_strlen, ft_putchar_fd
+# include "Libft/libft.h"	// ft_strlen
 # include <unistd.h>		// write
 # include <stdarg.h>		// va_list..
 # include <stdlib.h>		// malloc, free
-# include <stdio.h>			// printf tester
 # include <limits.h>		// LONG_MIN, LONG_MAX
 
 # ifndef FD

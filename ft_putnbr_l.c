@@ -6,7 +6,7 @@
 /*   By: sade-la- <sade-la-@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:21:06 by sade-la-          #+#    #+#             */
-/*   Updated: 2022/11/01 22:16:06 by sade-la-         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:43:17 by sade-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	ft_putnbr_l(long int n)
 		len += ft_putnbr_l(n % 10);
 	}
 	else
-	{
 		len += ft_putchar_l(n + '0');
-	}
 	return (len);
 }

@@ -5,7 +5,7 @@ SRCS	= ft_printf.c ft_putchar_l.c ft_putnbr_l.c ft_putstr_l.c \
 
 OBJS	= ${SRCS:.c=.o}		
 
-SRCSLIB	= Libft/ft_strlen.c Libft/ft_putchar_fd.c
+SRCSLIB	= Libft/ft_strlen.c
 
 OBJSLIB = ${SRCSLIB:.c=.o}
 
