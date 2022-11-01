@@ -18,6 +18,7 @@
 # include <stdarg.h>		// va_list..
 # include <stdlib.h>		// malloc, free
 # include <stdio.h>			// printf tester
+# include <limits.h>		// LONG_MIN, LONG_MAX
 
 # ifndef FD
 #  define FD 1
@@ -32,5 +33,6 @@ int	ft_putstr_l(char *s);
 int	ft_putchar_l(char s);
 int	ft_putnbr_l(long int n);
 int	ft_putnbr_base_l(unsigned int n, char *hex);
+int	ft_putptr_l(size_t n);
 
 #endif

@@ -14,7 +14,7 @@
 
 static int	ft_format_eval(va_list args, char format)
 {
-	int ret;
+	int	ret;
 
 	ret = 0;
 	if (format == '%')
@@ -34,15 +34,15 @@ static int	ft_format_eval(va_list args, char format)
 	else if (format == 'p')
 	{
 		ret += write(1, "0x", 2);
-		ret += ft_putnbr_base_l(va_arg(args, int), HEX_MIN);
+		ret += ft_putptr_l(va_arg(args, long));
 	}
 	return (ret);
 }
 
 int	ft_printf(char const *format, ...)
 {
-	va_list args;
-	int 	len;
+	va_list	args;
+	int		len;
 	int		i;
 
 	va_start(args, format);
@@ -61,11 +61,4 @@ int	ft_printf(char const *format, ...)
 	}
 	va_end(args);
 	return (len);
-}
-
-int	main()
-{
-
-	printf("%d\n", ft_printf("%p\n", -486828276));
-	printf("%d", printf("%p\n", -486828276));
 }

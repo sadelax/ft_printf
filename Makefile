@@ -1,7 +1,7 @@
 NAME	= libftprintf.a
 
 SRCS	= ft_printf.c ft_putchar_l.c ft_putnbr_l.c ft_putstr_l.c \
-		ft_putnbr_base_l.c
+		ft_putnbr_base_l.c ft_putptr_l.c
 
 OBJS	= ${SRCS:.c=.o}		
 

@@ -6,7 +6,7 @@
 /*   By: sade-la- <sade-la-@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:26:42 by sade-la-          #+#    #+#             */
-/*   Updated: 2022/11/01 17:53:03 by sade-la-         ###   ########.fr       */
+/*   Updated: 2022/11/02 00:10:40 by sade-la-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 int	ft_putnbr_base_l(unsigned int n, char *hex)
 {
-	static int	l;
-			
+	int	len;
+
+	len = 0;
 	if (n >= ft_strlen(hex))
 	{
-		ft_putnbr_base_l(n / ft_strlen(hex), hex);
-		ft_putnbr_base_l(n % ft_strlen(hex), hex);
+		len += ft_putnbr_base_l(n / ft_strlen(hex), hex);
+		len += ft_putnbr_base_l(n % ft_strlen(hex), hex);
 	}
 	else
-	{
-		++l;
-		ft_putchar_fd(hex[n], FD);
-	}
-	return (l);
+		len += ft_putchar_l(hex[n]);
+	return (len);
 }
