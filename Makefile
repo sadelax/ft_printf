@@ -1,10 +1,11 @@
 NAME	= libftprintf.a
 
-SRCS	= ft_printf.c
+SRCS	= ft_printf.c ft_putchar_l.c ft_putnbr_l.c ft_putstr_l.c \
+		ft_putnbr_base_l.c
 
 OBJS	= ${SRCS:.c=.o}		
 
-SRCSLIB	= libft/ft_strlen.c
+SRCSLIB	= Libft/ft_strlen.c Libft/ft_putchar_fd.c
 
 OBJSLIB = ${SRCSLIB:.c=.o}
 
@@ -13,7 +14,6 @@ CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 AR		= ar -rcs
 ARF		= ranlib
-BONUS	= .
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o $@
@@ -33,4 +33,3 @@ fclean:		clean
 re:			fclean all
 
 .PHONY:		all clean fclean re
-

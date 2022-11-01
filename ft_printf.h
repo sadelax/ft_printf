@@ -13,6 +13,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include "Libft/libft.h"	// ft_strlen, ft_putchar_fd
 # include <unistd.h>		// write
 # include <stdarg.h>		// va_list..
 # include <stdlib.h>		// malloc, free
@@ -23,11 +24,13 @@
 # endif
 
 # define DECIMAL "0123456789"
-# define HEXADECIMAL "0123456789abcdef"
+# define HEX_MIN "0123456789abcdef"
+# define HEX_MAY "0123456789ABCDEF"
 
 int	ft_printf(const char *format, ...);
-int	ft_putstr_fd(char *s, int fd);
-int	ft_putchar_fd(char s, int fd);
-int	ft_putnbr_fd(int n, int fd);
+int	ft_putstr_l(char *s);
+int	ft_putchar_l(char s);
+int	ft_putnbr_l(long int n);
+int	ft_putnbr_base_l(unsigned int n, char *hex);
 
 #endif

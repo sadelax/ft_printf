@@ -18,13 +18,19 @@ static int	ft_format_eval(va_list args, char format)
 
 	ret = 0;
 	if (format == '%')
-		ret += ft_putchar_fd('%', FD);
+		ret += ft_putchar_l('%');
 	else if (format == 's')
-		ret += ft_putstr_fd(va_arg(args, char *), FD);
+		ret += ft_putstr_l(va_arg(args, char *));
 	else if (format == 'c')
-		ret += ft_putchar_fd(va_arg(args, int), FD);
+		ret += ft_putchar_l(va_arg(args, int));
 	else if (format == 'd' || format == 'i')
-		ret += ft_putnbr_fd(va_arg(args, int), FD);
+		ret += ft_putnbr_l(va_arg(args, int));
+	else if (format == 'x')
+		ret += ft_putnbr_base_l(va_arg(args, int), HEX_MIN);
+	else if (format == 'X')
+		ret += ft_putnbr_base_l(va_arg(args, int), HEX_MAY);
+	else if (format == 'u')
+		ret += ft_putnbr_base_l(va_arg(args, int), DECIMAL);
 	return (ret);
 }
 
@@ -54,6 +60,6 @@ int	ft_printf(char const *format, ...)
 
 int	main()
 {
-	printf("%d\n", ft_printf("%d\n", -122));
-	printf("%d", printf("%d\n", -122));
+	printf("%d\n", ft_printf("%u\n", -122));
+	printf("%d", printf("%u\n", -122));
 }
