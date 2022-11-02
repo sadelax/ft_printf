@@ -62,3 +62,10 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (len);
 }
+/*
+int main()
+{
+	ft_printf("%d\n", ft_printf(" %d ", 444));
+	printf("%d\n", ft_printf(" %d ", 444));
+}
+*/
